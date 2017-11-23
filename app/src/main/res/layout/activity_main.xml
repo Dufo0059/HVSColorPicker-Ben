@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/colorSwatch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:height="200dp"
+        android:background="#000"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/hueTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/colorSwatch"
+        android:labelFor="@+id/hueSB"
+        android:text="@string/hue"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <FrameLayout
+        android:id="@+id/hueLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hueTV"
+        android:paddingEnd="0dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="0dp">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/gradient_hue" />
+    <SeekBar
+        android:id="@+id/hueSB"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/hueTV"
+        android:max="359" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/satTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/hueLayout"
+        android:labelFor="@+id/satSB"
+        android:text="@string/saturation"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <FrameLayout
+        android:id="@+id/sLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/satTV"
+        android:paddingEnd="0dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="0dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_above="@+id/brightTV"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/satTV"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_saturation" />
+
+        <SeekBar
+        android:id="@+id/satSB"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:max="255"
+        android:layout_below="@+id/satTV"
+        android:layout_alignParentStart="true" />
+
+    </FrameLayout>
+    <TextView
+        android:id="@+id/brightTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sLayout"
+        android:labelFor="@+id/satSB"
+        android:text="@string/brightness"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <FrameLayout
+        android:id="@+id/bLayoutLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/brightTV"
+        android:paddingEnd="0dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="0dp">
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/brightTV"
+        android:scaleType="fitXY"
+        android:src="@drawable/gradient_brightness"
+        android:layout_alignBottom="@+id/brightSB" />
+
+        <SeekBar
+            android:id="@+id/brightSB"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:max="100" />
+</FrameLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="24dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/bLayoutLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bLayout"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/blackButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/black"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/redButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/red"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/limeButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/lime"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/blueButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/blue"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/yellowButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/cyanButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/cyan"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/magentaButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/magenta"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/silverButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/silver"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/grayButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/gray"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/maroonButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/maroon"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/oliveButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/olive"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/greenButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/green"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/purpleButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/purple"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/tealButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/teal"
+                android:onClick="onClick" />
+            <Button
+                android:id="@+id/navyButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:background="@color/navy"
+                android:onClick="onClick" />
+
+
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+</RelativeLayout>
